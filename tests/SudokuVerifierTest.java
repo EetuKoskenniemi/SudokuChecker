@@ -68,4 +68,11 @@ SudokuVerifier v = new SudokuVerifier();
 		int result = v.verify(invalidString);
 		assertEquals("Invalid string should return 1", 1, result);
 	}
+
+	@Test
+	public void testUnicodeString() {
+		String unicodeString = "Ω≈ç√∫˜µ≤≥÷";
+		int result = v.verify(unicodeString);
+		assertEquals("Invalid string should return 1", 1, result);
+	}
 }
