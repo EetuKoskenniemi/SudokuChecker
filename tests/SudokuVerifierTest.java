@@ -61,4 +61,11 @@ SudokuVerifier v = new SudokuVerifier();
 		int result = v.verify(duplicateInColumn);
 		assertEquals("Duplicate in a column should return -4", -4, result);
 	}
+
+	@Test
+	public void testInvalidString() {
+		String invalidString = "4173698256321589479587243168254371697915864323469127582896435715732916841648752-,";
+		int result = v.verify(invalidString);
+		assertEquals("Invalid string should return 1", 1, result);
+	}
 }
